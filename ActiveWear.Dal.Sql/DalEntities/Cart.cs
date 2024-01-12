@@ -1,6 +1,6 @@
-﻿namespace ActiveWear.WebApi.Models
+﻿namespace ActiveWear.Dal.Sql.Entities
 {
-    public class Cart: BaseApiEntity
+    public class Cart: BaseDalEntity
     {
         public int CustomerId { get; set; }
 

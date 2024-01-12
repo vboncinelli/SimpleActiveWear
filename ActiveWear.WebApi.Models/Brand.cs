@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ActiveWear.WebApi.Models
+﻿namespace ActiveWear.WebApi.Models
 {
-    public class Brand: BaseEntity
+    public class Brand: BaseApiEntity
     {
-        public string Name { get; set; }
+        // TODO: attributi
 
+        public string Name { get; set; }
     }
 }

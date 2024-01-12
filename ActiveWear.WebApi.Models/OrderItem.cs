@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ActiveWear.Web.Api.Models;
 
 namespace ActiveWear.WebApi.Models
 {
-    public class OrderItem: BaseEntity
+    public class OrderItem: BaseApiEntity
     {
+        // TODO: Decorare con attributi
         public int OrderId { get; set; }
-        public int ProductId { get; set; }
-        public Product? Product { get; set; }
-        public int Quantity { get; set; }
-        public decimal UnitPrice { get; set; }
 
+        public ProductOrdered ItemOrdered { get; set; }
+
+        public int Quantity { get; set; }
+
+        public decimal UnitPrice { get; set; }
     }
 }

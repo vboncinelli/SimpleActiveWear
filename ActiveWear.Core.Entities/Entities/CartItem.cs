@@ -31,11 +31,13 @@ namespace ActiveWear.Core.Entities
 
         public void UpdateQuantity(int quantity)
         {
+            // TODO: In uno scenario reale, 0 e 999 sono definiti (e centralizzati) altrove (in genere come constanti) 
+            // Non devono essere cablati direttamente nel codice (hard coded)
             if(quantity < 0 || quantity > 999) {
-                throw new ArgumentOutOfRangeException("La quantità inserita è minore o maggiore al range prestabilito");
+                throw new ArgumentOutOfRangeException("La quantità deve essere compresa tra 0 e 999");
             }
 
-            Quantity = quantity;
+            this.Quantity = quantity;
         }
     }
 }

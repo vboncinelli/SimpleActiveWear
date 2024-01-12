@@ -3,19 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveWear.WebApi", "ActiveWear.WebApi\ActiveWear.WebApi.csproj", "{20CF8A43-BD55-4A80-B160-A04758C2AA8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActiveWear.WebApi", "ActiveWear.WebApi\ActiveWear.WebApi.csproj", "{20CF8A43-BD55-4A80-B160-A04758C2AA8F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{0B72F442-BA51-4E07-9FEB-DBA8D92A03E0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{7C099514-6F1E-4F27-94E0-F4732E9CC85C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveWear.WebApi.Models", "ActiveWear.WebApi.Models\ActiveWear.WebApi.Models.csproj", "{A09BBE37-BDC1-41DE-9C3C-C210B049E168}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActiveWear.WebApi.Models", "ActiveWear.WebApi.Models\ActiveWear.WebApi.Models.csproj", "{A09BBE37-BDC1-41DE-9C3C-C210B049E168}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{DB999CA7-D5F6-4FA8-B5AB-97C6FF65D791}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveWear.Core", "ActiveWear.Core.Entities\ActiveWear.Core.csproj", "{C5759723-BD1B-4F89-991B-D44FFFE8F7BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActiveWear.Core", "ActiveWear.Core.Entities\ActiveWear.Core.csproj", "{C5759723-BD1B-4F89-991B-D44FFFE8F7BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveWear.Dal.Sql", "ActiveWear.Dal.Sql\ActiveWear.Dal.Sql.csproj", "{9FBD355E-7E3F-439A-A681-ACAD84023C32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActiveWear.Dal.Sql", "ActiveWear.Dal.Sql\ActiveWear.Dal.Sql.csproj", "{9FBD355E-7E3F-439A-A681-ACAD84023C32}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commons", "Commons", "{644FE10F-2610-4D89-9205-42A1B266AED6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveWear.Common", "ActiveWear.Common\ActiveWear.Common.csproj", "{6590E753-5372-420D-85ED-3FADD83971D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,10 @@ Global
 		{9FBD355E-7E3F-439A-A681-ACAD84023C32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FBD355E-7E3F-439A-A681-ACAD84023C32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FBD355E-7E3F-439A-A681-ACAD84023C32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6590E753-5372-420D-85ED-3FADD83971D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6590E753-5372-420D-85ED-3FADD83971D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6590E753-5372-420D-85ED-3FADD83971D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6590E753-5372-420D-85ED-3FADD83971D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +56,7 @@ Global
 		{A09BBE37-BDC1-41DE-9C3C-C210B049E168} = {7C099514-6F1E-4F27-94E0-F4732E9CC85C}
 		{C5759723-BD1B-4F89-991B-D44FFFE8F7BC} = {DB999CA7-D5F6-4FA8-B5AB-97C6FF65D791}
 		{9FBD355E-7E3F-439A-A681-ACAD84023C32} = {0B72F442-BA51-4E07-9FEB-DBA8D92A03E0}
+		{6590E753-5372-420D-85ED-3FADD83971D6} = {644FE10F-2610-4D89-9205-42A1B266AED6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {57963578-84EE-4036-A3C1-B4E2255248D8}

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ActiveWear.WebApi.Models
 {
-    public abstract class BaseEntity
+    public abstract class BaseApiEntity
     {
         public int Id { get; set; }
     }

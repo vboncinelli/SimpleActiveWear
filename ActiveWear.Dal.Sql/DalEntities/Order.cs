@@ -1,6 +1,6 @@
-﻿namespace ActiveWear.WebApi.Models
+﻿namespace ActiveWear.Dal.Sql.Entities
 {
-    public class Order: BaseApiEntity
+    public class Order: BaseDalEntity
     {
         public DateTime OrderDate { get; set; }
 

@@ -1,25 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ActiveWear.Core.Entities
+﻿namespace ActiveWear.Core.Entities
 {
     public class OrderItem: BaseEntity
     {
-        public OrderItem(int orderId, int productId, int quantity, decimal unitPrice)
-        {
-            OrderId = orderId;
-            ProductId = productId;
-            Quantity = quantity;
-            UnitPrice = unitPrice;
-        }
-        public int OrderId { get; private set; }
-        public int ProductId { get; private set; }
-        public Product? Product { get; private set; }
-        public int Quantity { get; private set; }
+        public ProductOrdered ItemOrdered { get; private set; } = null!;
+
         public decimal UnitPrice { get; private set; }
 
+        public int Quantity { get; private set; }
+
+        public OrderItem(ProductOrdered itemOrdered, decimal unitPrice, int quantity)
+        {
+            this.ItemOrdered = itemOrdered;
+            this.UnitPrice = unitPrice;
+            this.Quantity = quantity;
+        }
+
+        public void UpdateUnits(int delta)
+        {
+            if (this.Quantity + delta < 1)
+                throw new InvalidOperationException("The number of remaining units cannot be negative");
+
+            this.Quantity += delta;
+        }
     }
 }

@@ -10,5 +10,9 @@ namespace ActiveWear.Core.Entities
     {
         public string Name { get; set; }
 
+        public Brand(string name)
+        {
+            this.Name = name;
+        }
     }
 }

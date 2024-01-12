@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ActiveWear.WebApi.Models
 {
-    public class Category: BaseEntity
+    public class Category: BaseApiEntity
     {
         public string Name { get; set; }
-        public string Description { get; set; }
 
+        public string Description { get; set; }
     }
 }
