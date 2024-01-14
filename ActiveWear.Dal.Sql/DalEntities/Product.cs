@@ -4,7 +4,7 @@ namespace ActiveWear.Dal.Sql.Entities
 {
     public class Product: BaseDalEntity
     {
-
+        [Column(TypeName = "nvarchar(200)")]
         public string Name { get; set; } = null!;
 
         public Season Season { get; set; }
