@@ -1,4 +1,6 @@
-﻿namespace ActiveWear.Dal.Sql.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ActiveWear.Dal.Sql.Entities
 {
     public class Product: BaseDalEntity
     {
@@ -19,6 +21,7 @@
 
         public Category? ProductCategory { get; set; }
 
+        [Column(TypeName = "decimal(18, 4)")]
         public decimal Price { get; set; }
     }
 }

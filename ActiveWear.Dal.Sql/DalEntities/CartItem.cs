@@ -1,6 +1,8 @@
-﻿namespace ActiveWear.Dal.Sql.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ActiveWear.Dal.Sql.Entities
 {
-    public class CartItem
+    public class CartItem : BaseDalEntity
     {
         public int ProductId { get; set; }
 
@@ -10,6 +12,7 @@
 
         public int Quantity { get; set; }
 
+        [Column(TypeName = "decimal(18, 4)")]
         public decimal UnitPrice { get; set; }
     }
 }

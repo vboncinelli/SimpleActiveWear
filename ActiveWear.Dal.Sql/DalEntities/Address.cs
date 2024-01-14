@@ -1,7 +1,7 @@
 ﻿namespace ActiveWear.Dal.Sql.Entities
 {
-    public class Address
-    { 
+    public class Address : BaseDalEntity
+    {
         public string Street { get; set; } = null!;
 
         public string City { get; set; } = null!;

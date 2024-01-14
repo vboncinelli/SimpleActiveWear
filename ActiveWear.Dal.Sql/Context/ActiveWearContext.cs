@@ -21,11 +21,30 @@ namespace ActiveWear.Dal.Sql.Context
 
         public virtual DbSet<Product> Products { get; set; }
 
-        public virtual DbSet<Category> ProductCategory { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
 
         public ActiveWearContext(string connectionString)
         {
             this._connectionString = connectionString;
+        }
+
+        public ActiveWearContext()
+        {
+            this._connectionString = "Data Source=localhost;Initial Catalog=ActiveWearShop;Integrated Security=true;TrustServerCertificate=true;";
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(this._connectionString);
+
+            optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+            
+            optionsBuilder.EnableDetailedErrors();
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            
         }
     }
 }

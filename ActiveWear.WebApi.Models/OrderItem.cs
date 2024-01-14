@@ -7,7 +7,7 @@ namespace ActiveWear.WebApi.Models
         // TODO: Decorare con attributi
         public int OrderId { get; set; }
 
-        public ProductOrdered ItemOrdered { get; set; }
+        public required ProductOrdered ItemOrdered { get; set; }
 
         public int Quantity { get; set; }
 
