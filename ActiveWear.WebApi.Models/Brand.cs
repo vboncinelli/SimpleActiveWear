@@ -1,9 +1,10 @@
-﻿namespace ActiveWear.WebApi.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ActiveWear.WebApi.Models
 {
     public class Brand: BaseApiEntity
     {
-        // TODO: attributi
-
+        [Required]
         public string Name { get; set; }
     }
 }
