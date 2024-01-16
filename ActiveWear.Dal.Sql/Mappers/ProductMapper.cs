@@ -5,7 +5,7 @@ namespace ActiveWear.Dal.Sql.Mappers
 {
     internal static class ProductMapper
     {
-        public static EF.Product ToDal(this Domain.Product entity)
+        internal static EF.Product ToDal(this Domain.Product entity)
         {
             var dalEntity = new EF.Product()
             {
@@ -21,36 +21,36 @@ namespace ActiveWear.Dal.Sql.Mappers
             return dalEntity;
         }
 
-        public static Domain.Product ToDomain(this EF.Product dalEntity)
+        internal static Domain.Product ToDomain(this EF.Product dalEntity)
         {
-            if (dalEntity.ProductCategory is null || dalEntity.ProductBrand is null)
-            {
-                var entity = new Domain.Product(
-                    name: dalEntity.Name,
-                    description: dalEntity.Description,
-                    categoryId: dalEntity.CategoryId,
-                    brandId: dalEntity.BrandId,
-                    imageUri: dalEntity.ImageUri,
-                    price: dalEntity.Price);
+            var category = dalEntity.ProductCategory?.ToDomain();
+            var brand = dalEntity.ProductBrand?.ToDomain();
 
-                entity.Id = dalEntity.Id;
+            var entity = new Domain.Product(
+                name: dalEntity.Name,
+                description: dalEntity.Description,
+                categoryId: dalEntity.CategoryId,
+                brandId: dalEntity.BrandId,
+                imageUri: dalEntity.ImageUri,
+                price: dalEntity.Price);
 
-                return entity;
-            }
-            else
-            {
-                var entity = new Domain.Product(
-                    name: dalEntity.Name,
-                    description: dalEntity.Description,
-                    category: new Domain.Category(dalEntity.ProductCategory.Name, dalEntity.ProductCategory.Description),
-                    brand: new Domain.Brand(dalEntity.ProductBrand.Name),
-                    imageUri: dalEntity.ImageUri,
-                    price: dalEntity.Price);
+            entity.Id = dalEntity.Id;
 
-                entity.Id = dalEntity.Id;
+            return entity;
+        }
 
-                return entity;
-            }
+        internal static Domain.Category ToDomain(this EF.Category category)
+        {
+            var domainCategory = new Domain.Category(category.Name, category.Description);
+            domainCategory.Id = category.Id;
+            return domainCategory;
+        }
+
+        internal static Domain.Brand ToDomain(this EF.Brand brand)
+        {
+            var domainBrand = new Domain.Brand(brand.Name);
+            domainBrand.Id = brand.Id;
+            return domainBrand;
         }
     }
 }

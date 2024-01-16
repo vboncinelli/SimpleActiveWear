@@ -1,6 +1,5 @@
 ﻿using ActiveWear.Core.Interfaces;
-using ApiEntities = ActiveWear.WebApi.Models;
-using Domain = ActiveWear.Core.Entities;
+using ActiveWear.WebApi.Mappers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ActiveWear.WebApi.Controllers
@@ -19,19 +18,11 @@ namespace ActiveWear.WebApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            Domain.Product? product = await _shopRepository.FindProductAsync(id);
-            if (product == null)
-                return NotFound();
+            var product = await _shopRepository.FindProductAsync(id);
+            
+            if (product == null) return NotFound();
 
-            var apiProduct = new ApiEntities.Product()
-            {
-                Id = product.Id,
-                Name = product.Name,
-                Description = product.Description,
-                Price = product.Price,
-            };
-
-            return Ok(apiProduct);
+            return Ok(product.ToApi());
         }
     }
 }

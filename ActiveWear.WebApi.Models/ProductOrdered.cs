@@ -1,4 +1,6 @@
-﻿namespace ActiveWear.Web.Api.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ActiveWear.WebApi.Models
 {
     /// <summary>
     /// Represents a snapshot of the item that was ordered. If catalog item details change, details of
@@ -6,12 +8,12 @@
     /// </summary>
     public class ProductOrdered
     {
-        //TODO: Da decorare. Tutti gli elementi sono obbligatori
-
+        [Required]
         public int ProductId { get; set; }
 
-        public string ProductName { get; set; }
+        [Required]
+        public string ProductName { get; set; } = null!;
 
-        public string PictureUri { get; set; }
+        public string? PictureUri { get; set; }
     }
 }

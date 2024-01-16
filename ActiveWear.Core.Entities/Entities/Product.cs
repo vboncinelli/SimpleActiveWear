@@ -8,8 +8,9 @@
             int brandId,
             int categoryId,
             decimal price,
-            string? imageUri = null
-            ) 
+            string? imageUri = null,
+            Brand? brand = null,
+            Category? category = null) 
         {
             Name = name;
             Description = description;
@@ -17,25 +18,8 @@
             CategoryId = categoryId;
             Price = price;
             ImageUri = imageUri;
-        }
-
-        public Product(
-            string name,
-            string description,
-            Brand brand,
-            Category category,
-            decimal price,
-            string? imageUri = null
-    )
-        {
-            Name = name;
-            Description = description;
             ProductBrand = brand;
-            BrandId = brand.Id;
             ProductCategory = category;
-            CategoryId = category.Id;
-            Price = price;
-            ImageUri = imageUri;
         }
 
         public string Name { get; private set; }

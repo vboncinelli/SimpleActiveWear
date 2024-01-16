@@ -1,6 +1,4 @@
-﻿using ActiveWear.Web.Api.Models;
-
-namespace ActiveWear.WebApi.Models
+﻿namespace ActiveWear.WebApi.Models
 {
     public class OrderItem: BaseApiEntity
     {

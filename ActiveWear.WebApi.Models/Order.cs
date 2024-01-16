@@ -6,6 +6,8 @@
 
         public int CustomerId { get; set; }
 
+        public Address? ShipToAddress { get; set; }
+
         public List<OrderItem> Items { get; set;} = new List<OrderItem>();
     }
 }
