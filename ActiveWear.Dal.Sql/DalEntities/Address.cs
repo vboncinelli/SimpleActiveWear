@@ -6,14 +6,23 @@ namespace ActiveWear.Dal.Sql.Entities
     public class Address : BaseDalEntity
     {
         [Required]
+        [Column(TypeName = "nvarchar(200)")]
         public string Street { get; set; } = null!;
 
+        [Required]
+        [Column(TypeName = "nvarchar(200)")]
         public string City { get; set; } = null!;
 
+        [Required]
+        [Column(TypeName = "nvarchar(200)")]
         public string StateOrProvince { get; set; } = null!;
 
+        [Required]
+        [Column(TypeName = "nvarchar(10)")]
         public string PostalCode { get; set; } = null!;
 
+        [Required]
+        [Column(TypeName = "nvarchar(200)")]
         public string Country { get; set; } = null!;
     }
 }

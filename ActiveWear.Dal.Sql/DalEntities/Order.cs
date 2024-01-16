@@ -1,4 +1,7 @@
-﻿namespace ActiveWear.Dal.Sql.Entities
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ActiveWear.Dal.Sql.Entities
 {
     public class Order: BaseDalEntity
     {
@@ -6,15 +9,25 @@
 
         public int CustomerId { get; set; }
 
-        public required string Street { get; set; }
+        [Required]
+        [Column(TypeName = "nvarchar(200)")]
+        public string Street { get; set; } = null!;
 
-        public required string City { get; set; }
+        [Required]
+        [Column(TypeName = "nvarchar(200)")]
+        public string City { get; set; } = null!;
 
-        public required string StateOrProvince { get; set; }
+        [Required]
+        [Column(TypeName = "nvarchar(200)")]
+        public string StateOrProvince { get; set; } = null!;
 
-        public required string Country { get; set; }
+        [Required]
+        [Column(TypeName = "nvarchar(200)")]
+        public string Country { get; set; } = null!;
 
-        public required string ZipCode { get; set; }
+        [Required]
+        [Column(TypeName = "nvarchar(10)")]
+        public string ZipCode { get; set; } = null!;
 
         public List<OrderItem> Items { get; set;} = new List<OrderItem>();
     }

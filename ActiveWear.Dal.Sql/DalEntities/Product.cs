@@ -7,10 +7,10 @@ namespace ActiveWear.Dal.Sql.Entities
         [Column(TypeName = "nvarchar(200)")]
         public string Name { get; set; } = null!;
 
-        public Season Season { get; set; }
-        
+        [Column(TypeName = "nvarchar(max)")]
         public string? ImageUri { get; set; }
 
+        [Column(TypeName = "nvarchar(2000)")]
         public string Description { get; set; } = null!;
 
         public Brand? ProductBrand { get; set; }
