@@ -11,4 +11,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ActiveWear.Core.Entities\ActiveWear.Core.csproj" />
+    <ProjectReference Include="..\ActiveWear.Dal.Sql\ActiveWear.Dal.Sql.csproj" />
+    <ProjectReference Include="..\ActiveWear.WebApi.Models\ActiveWear.WebApi.Models.csproj" />
+  </ItemGroup>
+
 </Project>

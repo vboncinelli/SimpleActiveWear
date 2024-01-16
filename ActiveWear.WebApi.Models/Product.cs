@@ -1,10 +1,10 @@
-﻿namespace ActiveWear.WebApi.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ActiveWear.WebApi.Models
 {
     public class Product: BaseApiEntity
     {
         public string Name { get; set; }
-
-        public Season Season { get; set; }
 
         public string ImageUri { get; set; }
 
@@ -18,6 +18,7 @@
 
         public Category? ProductCategory { get; set; }
 
+        [Range(0, int.MaxValue)]
         public decimal Price { get; set; }
     }
 }

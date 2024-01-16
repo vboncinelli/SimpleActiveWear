@@ -8,7 +8,6 @@
             int brandId,
             int categoryId,
             decimal price,
-            Season season = Season.AllSeason,
             string? imageUri = null
             ) 
         {
@@ -17,12 +16,29 @@
             BrandId = brandId;
             CategoryId = categoryId;
             Price = price;
-            Season = season;
             ImageUri = imageUri;
         }
-        public string Name { get; private set; }
 
-        public Season Season { get; private set; }
+        public Product(
+            string name,
+            string description,
+            Brand brand,
+            Category category,
+            decimal price,
+            string? imageUri = null
+    )
+        {
+            Name = name;
+            Description = description;
+            ProductBrand = brand;
+            BrandId = brand.Id;
+            ProductCategory = category;
+            CategoryId = category.Id;
+            Price = price;
+            ImageUri = imageUri;
+        }
+
+        public string Name { get; private set; }
 
         public string? ImageUri { get; private set; }
 

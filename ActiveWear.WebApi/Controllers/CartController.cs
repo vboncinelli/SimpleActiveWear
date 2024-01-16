@@ -5,7 +5,7 @@ namespace ActiveWear.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BasketController : BaseApiController
+    public class CartController : BaseApiController
     {
     }
 }

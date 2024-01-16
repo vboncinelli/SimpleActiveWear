@@ -1,4 +1,7 @@
 
+using ActiveWear.Core.Interfaces;
+using ActiveWear.Dal.Sql;
+
 namespace ActiveWear.WebApi
 {
     public class Program
@@ -10,6 +13,9 @@ namespace ActiveWear.WebApi
             // Add services to the container.
 
             builder.Services.AddControllers();
+
+            builder.Services.AddSingleton<IShopRepository, ShopRepository>();
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();

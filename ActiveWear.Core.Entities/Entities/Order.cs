@@ -4,11 +4,21 @@ namespace ActiveWear.Core.Entities
 {
     public class Order: BaseEntity
     {
-        public DateTime OrderDate { get; set; }
+        public DateTime OrderDate { get; private set; }
 
-        public int CustomerId { get; set; }
+        public int CustomerId { get; private set; }
 
-        public List<OrderItem> Items { get; set;} = new List<OrderItem>();
+        public Address ShipToAddress { get; private set; } = null!;
+
+
+        public List<OrderItem> Items { get; private set;} = new List<OrderItem>();
+
+        public Order(int customerId, Address shipToAddress, List<OrderItem> orderItems)
+        {
+            this.CustomerId = customerId;
+            this.ShipToAddress = shipToAddress;
+            this.Items = orderItems;
+        }
 
         public decimal GetTotal()
         {
