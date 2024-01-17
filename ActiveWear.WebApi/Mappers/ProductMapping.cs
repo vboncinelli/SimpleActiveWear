@@ -12,7 +12,8 @@ namespace ActiveWear.WebApi.Mappers
                 price: product.Price,
                 categoryId: product.CategoryId,
                 brandId: product.BrandId,
-                description: product.Description);
+                description: product.Description,
+                imageUri: product.ImageUri);
 
             entity.Id = product.Id;
 
@@ -28,6 +29,7 @@ namespace ActiveWear.WebApi.Mappers
                 Price = product.Price,
                 CategoryId = product.CategoryId,
                 BrandId = product.BrandId,
+                ImageUri = product.ImageUri,
                 Description = product.Description,
                 ProductBrand = product.ProductBrand?.ToApi(),
                 ProductCategory = product.ProductCategory?.ToApi()

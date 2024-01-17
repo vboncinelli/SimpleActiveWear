@@ -6,7 +6,7 @@ namespace ActiveWear.WebApi.Models
     {
         public string Name { get; set; }
 
-        public string ImageUri { get; set; }
+        public string? ImageUri { get; set; }
 
         public string Description { get; set; }
 

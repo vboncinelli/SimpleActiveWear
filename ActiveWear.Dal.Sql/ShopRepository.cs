@@ -41,21 +41,28 @@ namespace ActiveWear.Dal.Sql
 
         public async Task<IEnumerable<Domain.Product>> GetAllAsync(int page, int pageSize)
         {
-            using (var context = this.GetContext())
+            try
             {
-                var products = await context.Products
-                    .Include(e => e.ProductBrand)
-                    .Include(e => e.ProductCategory)
-                    .OrderBy(e => e.Id)
-                    .Skip((page - 1) * pageSize)
-                    .Take(pageSize)
-                    .ToListAsync();
+                using (var context = this.GetContext())
+                {
+                    var products = await context.Products
+                        .Include(e => e.ProductBrand)
+                        .Include(e => e.ProductCategory)
+                        .OrderBy(e => e.Id)
+                        .Skip((page - 1) * pageSize)
+                        .Take(pageSize)
+                        .ToListAsync();
 
-                var collection = new List<Domain.Product>();
-                foreach (var product in products)
-                    collection.Add(product.ToDomain());
+                    var collection = new List<Domain.Product>();
+                    foreach (var product in products)
+                        collection.Add(product.ToDomain());
 
-                return collection;
+                    return collection;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException(ex.Message, ex);
             }
         }
 
@@ -78,28 +85,42 @@ namespace ActiveWear.Dal.Sql
 
         public async Task<Domain.Product> UpdateAsync(Domain.Product product)
         {
-            using (var context = this.GetContext())
+            try
             {
-                var dalProduct = product.ToDal();
+                using (var context = this.GetContext())
+                {
+                    var dalProduct = product.ToDal();
 
-                var attached = context.Products.Attach(dalProduct);
+                    var attached = context.Products.Attach(dalProduct);
 
-                attached.State = EntityState.Modified;
+                    attached.State = EntityState.Modified;
 
-                await context.SaveChangesAsync();
+                    await context.SaveChangesAsync();
 
-                return product;
+                    return product;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException(ex.Message, ex);
             }
         }
 
         public async Task DeleteAsync(int id)
         {
-            using (var context = this.GetContext())
+            try
             {
-                var deletedRows = await context.Products.Where(e => e.Id == id).ExecuteDeleteAsync();
+                using (var context = this.GetContext())
+                {
+                    var deletedRows = await context.Products.Where(e => e.Id == id).ExecuteDeleteAsync();
 
-                if (deletedRows == 0)
-                    throw new EntityNotFoundException($"Product with Id {id} not found");
+                    if (deletedRows == 0)
+                        throw new EntityNotFoundException($"Product with Id {id} not found");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException(ex.Message, ex);
             }
         }
 

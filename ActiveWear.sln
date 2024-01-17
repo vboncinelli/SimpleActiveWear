@@ -27,8 +27,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActiveWear.Web.Mvc", "Activ
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActiveWear.Dal.Entities", "ActiveWear.Dal.Entities\ActiveWear.Dal.Entities.csproj", "{39C98EA6-04A2-4BE1-BDA2-5AA8B8D6BFA2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActiveWear.Dal.EF", "ActiveWear.Dal.EF\ActiveWear.Dal.EF.csproj", "{7AE026CA-F3B6-4A68-9582-D9DD211D9B29}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,10 +61,6 @@ Global
 		{39C98EA6-04A2-4BE1-BDA2-5AA8B8D6BFA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39C98EA6-04A2-4BE1-BDA2-5AA8B8D6BFA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39C98EA6-04A2-4BE1-BDA2-5AA8B8D6BFA2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7AE026CA-F3B6-4A68-9582-D9DD211D9B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7AE026CA-F3B6-4A68-9582-D9DD211D9B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7AE026CA-F3B6-4A68-9582-D9DD211D9B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7AE026CA-F3B6-4A68-9582-D9DD211D9B29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,7 +73,6 @@ Global
 		{6590E753-5372-420D-85ED-3FADD83971D6} = {644FE10F-2610-4D89-9205-42A1B266AED6}
 		{60B207CC-EC57-48F4-A1AD-9DA64D5325AB} = {D961088C-547E-4E89-BEB1-CAA6726ACBF4}
 		{39C98EA6-04A2-4BE1-BDA2-5AA8B8D6BFA2} = {0B72F442-BA51-4E07-9FEB-DBA8D92A03E0}
-		{7AE026CA-F3B6-4A68-9582-D9DD211D9B29} = {0B72F442-BA51-4E07-9FEB-DBA8D92A03E0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {57963578-84EE-4036-A3C1-B4E2255248D8}
