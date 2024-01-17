@@ -1,16 +1,23 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ActiveWear.Web.Mvc.Models;
+using Microsoft.AspNetCore.Mvc;
+using RestSharp;
 
 namespace ActiveWear.Web.Mvc.Controllers
 {
     public class ProductController : Controller
     {
-        [HttpGet("{id}")]
-        public IActionResult Details(int id)
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
         {
-            // 1. recuperare dalle api il prodotto cercato
-            // 2. passarlo alla vista.
+            var options = new RestClientOptions("https://localhost:5000/api");
+            
+            var client = new RestClient(options);
 
-            return View();
+            var request = new RestRequest($"products/{id}", Method.Get);
+
+            var product = await client.GetAsync<ProductViewModel>(request);
+
+            return View(product);
         }
 
         [HttpGet]
