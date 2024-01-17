@@ -1,10 +1,10 @@
-﻿using Domain = ActiveWear.Core.Entities;
+﻿using ActiveWear.Core.Exceptions;
 using ActiveWear.Core.Interfaces;
+using ActiveWear.Dal.Mappers;
 using ActiveWear.Dal.Sql.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using ActiveWear.Dal.Sql.Mappers;
-using ActiveWear.Core.Exceptions;
+using Domain = ActiveWear.Core.Entities;
 
 namespace ActiveWear.Dal.Sql
 {
@@ -102,7 +102,6 @@ namespace ActiveWear.Dal.Sql
                     throw new EntityNotFoundException($"Product with Id {id} not found");
             }
         }
-
 
         protected virtual ActiveWearContext GetContext()
         {

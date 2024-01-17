@@ -19,10 +19,8 @@ namespace ActiveWear.WebApi.Mappers
             return entity;
         }
 
-        public static ApiModels.Product? ToApi(this Domain.Product? product)
+        public static ApiModels.Product ToApi(this Domain.Product product)
         {
-            if (product == null) return null;
-
             var entity = new ApiModels.Product()
             {
                 Id = product.Id,
@@ -30,7 +28,32 @@ namespace ActiveWear.WebApi.Mappers
                 Price = product.Price,
                 CategoryId = product.CategoryId,
                 BrandId = product.BrandId,
-                Description = product.Description
+                Description = product.Description,
+                ProductBrand = product.ProductBrand?.ToApi(),
+                ProductCategory = product.ProductCategory?.ToApi()
+            };
+
+            return entity;
+        }
+
+        public static ApiModels.Brand ToApi(this Domain.Brand brand)
+        {
+            var entity = new ApiModels.Brand()
+            {
+                Id = brand.Id,
+                Name = brand.Name,
+            };
+
+            return entity;
+        }
+
+        public static ApiModels.Category ToApi(this Domain.Category category)
+        {
+            var entity = new ApiModels.Category()
+            {
+                Id = category.Id,
+                Name = category.Name,
+                Description = category.Description,
             };
 
             return entity;

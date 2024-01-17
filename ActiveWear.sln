@@ -18,8 +18,19 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActiveWear.Dal.Sql", "ActiveWear.Dal.Sql\ActiveWear.Dal.Sql.csproj", "{9FBD355E-7E3F-439A-A681-ACAD84023C32}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commons", "Commons", "{644FE10F-2610-4D89-9205-42A1B266AED6}"
+	ProjectSection(SolutionItems) = preProject
+		ActiveWear.WebApi.Models\Season.cs = ActiveWear.WebApi.Models\Season.cs
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveWear.Common", "ActiveWear.Common\ActiveWear.Common.csproj", "{6590E753-5372-420D-85ED-3FADD83971D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActiveWear.Common", "ActiveWear.Common\ActiveWear.Common.csproj", "{6590E753-5372-420D-85ED-3FADD83971D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{D961088C-547E-4E89-BEB1-CAA6726ACBF4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActiveWear.Web.Mvc", "ActiveWear.Web.Mvc\ActiveWear.Web.Mvc.csproj", "{60B207CC-EC57-48F4-A1AD-9DA64D5325AB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActiveWear.Dal.Entities", "ActiveWear.Dal.Entities\ActiveWear.Dal.Entities.csproj", "{39C98EA6-04A2-4BE1-BDA2-5AA8B8D6BFA2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActiveWear.Dal.EF", "ActiveWear.Dal.EF\ActiveWear.Dal.EF.csproj", "{7AE026CA-F3B6-4A68-9582-D9DD211D9B29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +58,18 @@ Global
 		{6590E753-5372-420D-85ED-3FADD83971D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6590E753-5372-420D-85ED-3FADD83971D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6590E753-5372-420D-85ED-3FADD83971D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60B207CC-EC57-48F4-A1AD-9DA64D5325AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60B207CC-EC57-48F4-A1AD-9DA64D5325AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60B207CC-EC57-48F4-A1AD-9DA64D5325AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60B207CC-EC57-48F4-A1AD-9DA64D5325AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39C98EA6-04A2-4BE1-BDA2-5AA8B8D6BFA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39C98EA6-04A2-4BE1-BDA2-5AA8B8D6BFA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39C98EA6-04A2-4BE1-BDA2-5AA8B8D6BFA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39C98EA6-04A2-4BE1-BDA2-5AA8B8D6BFA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AE026CA-F3B6-4A68-9582-D9DD211D9B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AE026CA-F3B6-4A68-9582-D9DD211D9B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AE026CA-F3B6-4A68-9582-D9DD211D9B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AE026CA-F3B6-4A68-9582-D9DD211D9B29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +80,9 @@ Global
 		{C5759723-BD1B-4F89-991B-D44FFFE8F7BC} = {DB999CA7-D5F6-4FA8-B5AB-97C6FF65D791}
 		{9FBD355E-7E3F-439A-A681-ACAD84023C32} = {0B72F442-BA51-4E07-9FEB-DBA8D92A03E0}
 		{6590E753-5372-420D-85ED-3FADD83971D6} = {644FE10F-2610-4D89-9205-42A1B266AED6}
+		{60B207CC-EC57-48F4-A1AD-9DA64D5325AB} = {D961088C-547E-4E89-BEB1-CAA6726ACBF4}
+		{39C98EA6-04A2-4BE1-BDA2-5AA8B8D6BFA2} = {0B72F442-BA51-4E07-9FEB-DBA8D92A03E0}
+		{7AE026CA-F3B6-4A68-9582-D9DD211D9B29} = {0B72F442-BA51-4E07-9FEB-DBA8D92A03E0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {57963578-84EE-4036-A3C1-B4E2255248D8}

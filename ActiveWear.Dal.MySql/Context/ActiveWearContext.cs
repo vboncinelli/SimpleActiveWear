@@ -1,7 +1,7 @@
 ﻿using ActiveWear.Dal.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace ActiveWear.Dal.Sql.Context
+namespace ActiveWear.Dal.MySql.Context
 {
     public class ActiveWearContext : DbContext
     {
@@ -30,12 +30,12 @@ namespace ActiveWear.Dal.Sql.Context
 
         public ActiveWearContext()
         {
-            this._connectionString = "Data Source=localhost;Initial Catalog=ActiveWearShop;Integrated Security=true;TrustServerCertificate=true;";
+            this._connectionString = "Server=localhost;Port=1234;Database=ActiveWearShopDb;Uid=root;Pwd=$uperbeppe74;";
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(this._connectionString);
+            optionsBuilder.UseMySql(this._connectionString, ServerVersion.AutoDetect, (builder) => builder.);
 
             optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             

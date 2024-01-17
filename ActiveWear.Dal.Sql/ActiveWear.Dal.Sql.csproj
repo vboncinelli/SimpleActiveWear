@@ -20,6 +20,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\ActiveWear.Common\ActiveWear.Common.csproj" />
 		<ProjectReference Include="..\ActiveWear.Core.Entities\ActiveWear.Core.csproj" />
+		<ProjectReference Include="..\ActiveWear.Dal.Entities\ActiveWear.Dal.Entities.csproj" />
 	</ItemGroup>
 
 </Project>
