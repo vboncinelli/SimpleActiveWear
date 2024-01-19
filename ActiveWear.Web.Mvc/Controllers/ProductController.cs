@@ -1,4 +1,5 @@
 ﻿using ActiveWear.Web.Mvc.Models;
+using ActiveWear.Web.Mvc.Services;
 using Microsoft.AspNetCore.Mvc;
 using RestSharp;
 
@@ -6,27 +7,31 @@ namespace ActiveWear.Web.Mvc.Controllers
 {
     public class ProductController : Controller
     {
+        private readonly IClient _client;
+
+        public ProductController(IClient client)
+        {
+            this._client = client;
+        }
+
         [HttpGet]
         public async Task<IActionResult> Details(int id)
         {
-            var options = new RestClientOptions("https://localhost:5000/api");
-            
-            var client = new RestClient(options);
+            //TODO: gestire eventuali errori con try catch
 
-            var request = new RestRequest($"products/{id}", Method.Get);
-
-            var product = await client.GetAsync<ProductViewModel>(request);
+            var product = await this._client.FindProductAsync(id);
 
             return View(product);
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            // 1. recuperare dalle api la lista dei prodotti
-            // 2. passarla alla vista.
-            
-            return View();
+            //TODO: gestire eventuali errori con try catch
+
+            var products = await this._client.GetAllProductsAsync();
+
+            return View("List", products);
         }
     }
 }

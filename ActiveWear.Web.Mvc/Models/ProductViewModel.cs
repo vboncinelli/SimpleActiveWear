@@ -1,4 +1,6 @@
-﻿namespace ActiveWear.Web.Mvc.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ActiveWear.Web.Mvc.Models
 {
     public class ProductViewModel
     {

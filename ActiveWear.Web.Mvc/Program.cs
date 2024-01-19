@@ -1,3 +1,5 @@
+using ActiveWear.Web.Mvc.Services;
+
 namespace ActiveWear.Web.Mvc
 {
     public class Program
@@ -5,6 +7,8 @@ namespace ActiveWear.Web.Mvc
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddSingleton<IClient, ApiClient>();
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
