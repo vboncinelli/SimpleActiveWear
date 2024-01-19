@@ -1,7 +1,6 @@
 ﻿using ActiveWear.Web.Mvc.Models;
 using ActiveWear.Web.Mvc.Services;
 using Microsoft.AspNetCore.Mvc;
-using RestSharp;
 
 namespace ActiveWear.Web.Mvc.Controllers
 {
@@ -32,6 +31,25 @@ namespace ActiveWear.Web.Mvc.Controllers
             var products = await this._client.GetAllProductsAsync();
 
             return View("List", products);
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View(new ProductViewModel());
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([FromForm] ProductViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var newProduct = await this._client.AddProductAsync(model);
+
+            return RedirectToAction("Index");
         }
     }
 }

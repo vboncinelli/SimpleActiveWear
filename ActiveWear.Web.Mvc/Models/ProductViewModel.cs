@@ -20,6 +20,7 @@ namespace ActiveWear.Web.Mvc.Models
 
         public CategoryViewModel? ProductCategory { get; set; }
 
+        [DataType(DataType.Currency)]
         public decimal? Price { get; set; }
     }
 }
